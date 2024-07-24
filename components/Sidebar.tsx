@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import {sidebarLinks} from '@/constants'
+import {sidebarLinks} from '@/constants/index'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 
-const Sidebar = ({user}: SidebarProps) => {
+const Sidebar = ({user}:SidebarProps) => {
   const pathname = usePathname();  
 
   return (
@@ -25,17 +25,15 @@ const Sidebar = ({user}: SidebarProps) => {
                 Horizon
                 </h1>
             </Link>
-            {sidebarLinks.map((item)
-                => {
-                    const isActive = pathname === item.route || pathname.startsWth('${item.route}/')
-                    
-                    return (
-                        <Link href={item.route} key={item.label}
-                            className={cn('sidebar-link',{
-                            'bg-bank-gradient': isActive })}
-                        >
-                            {item.label}
-                        </Link>
+
+                {sidebarLinks.map((item) =>{
+                const isActive = 
+                pathname === item.route || pathname.startsWith('${item.route}/')
+
+                return (
+                    <Link href={item.route} key={item.label} className={cn('sidebar-link'{'bg-bank-gradient':isActive})}>
+                    {item.label}
+                    </Link>
                     )
                 })}
         </nav>
