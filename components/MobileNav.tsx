@@ -68,6 +68,8 @@ const MobileNav = ({user}: MobileNavProps) => {
                     })}
                 </nav>
             </SheetClose>
+
+            <Footer user={user} type="mobile"/>
         </div>
 
         
@@ -75,7 +77,7 @@ const MobileNav = ({user}: MobileNavProps) => {
         </Sheet>
 
     </section>
-  )
+)
 }
 
 export default MobileNav

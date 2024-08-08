@@ -6,8 +6,7 @@ import { cookies } from "next/headers";
 export async function createSessionClient() {
     const client = new Client()
         .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
-        .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!)
-        .setKey(process.env.NEXT_APPWRITE_KEY!);
+        .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
     const session = cookies().get("appwrite-session");
 
